@@ -8,6 +8,7 @@
   top: 0;
   position: sticky;
   z-index: 999;
+  background-color: white;
 }
 .header__left {
   display: flex;

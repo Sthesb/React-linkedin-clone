@@ -6,4 +6,5 @@
 }
 .app__body {
   display: flex;
+  padding: 20px 200px;
 }

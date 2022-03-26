@@ -3,9 +3,6 @@
   position: sticky;
   flex: 0.6;
   margin: 0 20px;
-  border-radius: 10px;
-  text-align: center;
-  height: fit-content;
 }
 
 .feed__imputContainer {
@@ -42,3 +39,24 @@
 }
 
 /*  options  */
+.feed__options {
+  /* padding-top: 10px; */
+  display: flex;
+  justify-content: space-evenly;
+}
+.inputOptions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: gray;
+  padding: 10px;
+  cursor: pointer;
+}
+.inputOptions:hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.inputOptions > h4 {
+  margin-left: 5px;
+}

@@ -1,0 +1,22 @@
+/*  options  */
+.feed__options {
+  /* padding-top: 10px; */
+  display: flex;
+  justify-content: space-around;
+}
+.inputOptions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: gray;
+  padding: 10px;
+  cursor: pointer;
+}
+.inputOptions:hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.inputOptions > h4 {
+  margin-left: 5px;
+}
