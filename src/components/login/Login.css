@@ -43,10 +43,10 @@
   color: #0274b3;
   cursor: pointer;
 }
-.login__error {
+.login > form > .login__error {
   padding: 10px;
   background-color: rgb(233, 130, 130);
-  width: 100%;
+  width: 350px;
   margin: 10px 0;
   border: 3px solid red;
   text-align: center;

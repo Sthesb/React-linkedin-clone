@@ -3,9 +3,9 @@ import React from 'react'
 // styles
 import './HeaderOption.css';
 
-function HeaderOption({ title, Icon, avatar }) {
+function HeaderOption({ title, Icon, avatar, onClick }) {
   return (
-    <div className='headerOption'>
+    <div className='headerOption' onClick={onClick}>
         {Icon && <Icon className="headerOption__icon"/>}
         { avatar && (
             <Avatar className='headerOption__icon' src={avatar} />

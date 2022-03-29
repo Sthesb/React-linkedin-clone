@@ -41,6 +41,23 @@ function Login() {
 
     const login_user = (e) => {
         e.preventDefault()
+        setError('')
+        if(name) {
+            setError('Full name is not required');
+            return 
+        }
+
+        auth.signInWithEmailAndPassword(email, password).then((userAuth) => {
+                dispatch(login({
+                    email: userAuth.email,
+                    uid: userAuth.uid,
+                    displayName: userAuth.name,
+                    photoURL: userAuth.photoURL
+                }))
+            }).catch((err) => {
+                console.log(err.message)
+                setError('Email or Password is incorrect')
+            })
         
     }
     return (
