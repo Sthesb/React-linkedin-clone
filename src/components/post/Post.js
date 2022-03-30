@@ -12,11 +12,12 @@ import ShareIcon from '@mui/icons-material/Share';
 import SendIcon from '@mui/icons-material/Send';
 
 
-function Post({ name, description, message, date,  photoURL }) {
+function Post({ name, description, message, date, photoURL }) {
+  console.log(photoURL)
   return (
     <div className='post'>
         <div className="post__header">
-            <Avatar />
+            <Avatar src={photoURL} className="post__avatar" >{name[0]}</Avatar>
             <div className="post__info">
               <h2>{name}</h2>
               <p>{description}</p>

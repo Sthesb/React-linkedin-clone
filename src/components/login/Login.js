@@ -51,7 +51,7 @@ function Login() {
                 dispatch(login({
                     email: userAuth.email,
                     uid: userAuth.uid,
-                    displayName: userAuth.name,
+                    displayName: userAuth.displayName,
                     photoURL: userAuth.photoURL
                 }))
             }).catch((err) => {

@@ -9,6 +9,11 @@
   display: flex;
   margin-bottom: 10px;
 }
+
+.post__avatar {
+  width: 60px !important;
+  height: 60px !important;
+}
 .post__info {
   margin-left: 10px;
 }

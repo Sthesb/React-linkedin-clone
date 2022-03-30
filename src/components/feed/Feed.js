@@ -14,10 +14,14 @@ import Posts from '../post/Post';
 // firebase
 import { db, timestamp } from '../../firebasse/config';
 
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../features/userSlice'
+
 
 function Feed() {
     const [posts, setPosts] = useState([]);
     const [newPost, setNewPost] = useState('');
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         db.collection("posts").orderBy('created_at', 'desc').onSnapshot(snapshot => (
@@ -38,10 +42,11 @@ function Feed() {
         }
 
         db.collection('posts').add({
-            name: 'Sthembiso Mathebula',
-            description: 'Software Developer',
+            user_id: user.uid,
+            name: user.displayName,
+            description: 'Description',
             message: newPost,
-            photoURL: '',
+            photoURL: user?.photoURL || '',
             created_at: timestamp.fromDate(new Date()),
         })
 
@@ -69,9 +74,10 @@ function Feed() {
 
             {  posts && posts.map(p => {
                 return <Posts key={p.id}
+                    photoURL = {p.data?.photoURL ? p.data?.photoURL : true}
                     name={p.data.name} 
                     message={p.data.message} 
-                    description={p.data.description}
+                    description="Description"
                     date={ formatDistanceToNow( p.data.created_at.toDate(), { addSuffix: true } )}
                 />
                 

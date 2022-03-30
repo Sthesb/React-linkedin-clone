@@ -17,6 +17,6 @@
 
 .headerOption__icon {
   object-fit: contain;
-  height: 30px !important;
-  width: 30px !important;
+  max-height: 25px !important;
+  max-width: 25px !important;
 }
