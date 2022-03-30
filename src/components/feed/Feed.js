@@ -17,6 +17,10 @@ import { db, timestamp } from '../../firebasse/config';
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
 
+// flip move
+import FlipMove from 'react-flip-move';
+
+
 
 function Feed() {
     const [posts, setPosts] = useState([]);
@@ -71,17 +75,19 @@ function Feed() {
                     <InputOptions title="Write article" Icon={CalendarViewDayIcon} color="#7fc15e"/>
                 </div>
             </div>
-
-            {  posts && posts.map(p => {
-                return <Posts key={p.id}
-                    photoURL = {p.data?.photoURL ? p.data?.photoURL : true}
-                    name={p.data.name} 
-                    message={p.data.message} 
-                    description="Description"
-                    date={ formatDistanceToNow( p.data.created_at.toDate(), { addSuffix: true } )}
-                />
-                
-            })}
+            <FlipMove>
+                {  posts && posts.map(p => {
+                    return <Posts key={p.id}
+                        photoURL = {p.data?.photoURL ? p.data?.photoURL : true}
+                        name={p.data.name} 
+                        message={p.data.message} 
+                        description="Description"
+                        date={ formatDistanceToNow( p.data.created_at.toDate(), { addSuffix: true } )}
+                    />
+                    
+                })}
+            </FlipMove>
+            
 
         </div>
     )

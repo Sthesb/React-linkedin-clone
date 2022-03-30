@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React, { forwardRef } from 'react'
 // styles
 import './Post.css'
 // components
@@ -12,10 +11,10 @@ import ShareIcon from '@mui/icons-material/Share';
 import SendIcon from '@mui/icons-material/Send';
 
 
-function Post({ name, description, message, date, photoURL }) {
+const Post = forwardRef (({ name, description, message, date, photoURL }, ref) => {
   console.log(photoURL)
   return (
-    <div className='post'>
+    <div ref={ref} className='post'>
         <div className="post__header">
             <Avatar src={photoURL} className="post__avatar" >{name[0]}</Avatar>
             <div className="post__info">
@@ -35,6 +34,6 @@ function Post({ name, description, message, date, photoURL }) {
         </div>
     </div>
   )
-}
+})
 
 export default Post
