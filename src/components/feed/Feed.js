@@ -48,6 +48,7 @@ function Feed() {
         db.collection('posts').add({
             user_id: user.uid,
             name: user.displayName,
+            email: user.email,
             description: 'Description',
             message: newPost,
             photoURL: user?.photoURL || '',
@@ -59,7 +60,7 @@ function Feed() {
 
     return (
         <div className='feed'>
-            <div className="feed__imputContainer">
+            <div className="feed__inputContainer">
                 <div className="feed__input">
                     <CreateIcon />
                     <form action="">
@@ -81,6 +82,7 @@ function Feed() {
                         photoURL = {p.data?.photoURL ? p.data?.photoURL : true}
                         name={p.data.name} 
                         message={p.data.message} 
+                        email={p.data.email}
                         description="Description"
                         date={ formatDistanceToNow( p.data.created_at.toDate(), { addSuffix: true } )}
                     />

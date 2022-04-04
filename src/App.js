@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="app">
       {/* Header */}
-      <Header />
+      {user && <Header />}
       {/* App Body */}
 
       { !user ? (<Login /> ): (

@@ -11,7 +11,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import SendIcon from '@mui/icons-material/Send';
 
 
-const Post = forwardRef (({ name, description, message, date, photoURL }, ref) => {
+const Post = forwardRef (({ name, description, message, date, photoURL, email }, ref) => {
   console.log(photoURL)
   return (
     <div ref={ref} className='post'>
@@ -19,7 +19,7 @@ const Post = forwardRef (({ name, description, message, date, photoURL }, ref) =
             <Avatar src={photoURL} className="post__avatar" >{name[0]}</Avatar>
             <div className="post__info">
               <h2>{name}</h2>
-              <p>{description}</p>
+              <p>{email}</p>
               <p>{date}</p>
             </div>
         </div>
