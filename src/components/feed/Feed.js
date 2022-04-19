@@ -79,7 +79,7 @@ function Feed() {
             <FlipMove>
                 {  posts && posts.map(p => {
                     return <Posts key={p.id}
-                        photoURL = {p.data?.photoURL ? p.data?.photoURL : true}
+                        photoURL = {p.data?.photoURL ? p.data?.photoURL : p.data.name}
                         name={p.data.name} 
                         message={p.data.message} 
                         email={p.data.email}

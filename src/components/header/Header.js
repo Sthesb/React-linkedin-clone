@@ -51,7 +51,7 @@ function Header() {
           <HeaderOption Icon={NotificationsIcon}  title="Notifications" />
           
           {/* avator */}
-          <HeaderOption  avatar={user?.photoURL ? user?.photoURL : true} title="Me" />
+          <HeaderOption  avatar={user?.photoURL ? user?.photoURL : user.displayName} title="Me" />
           <HeaderOption onClick={logoutofApp} Icon={LogoutIcon} title="Logout" />
           
         </div>

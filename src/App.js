@@ -34,7 +34,7 @@ function App() {
         dispatch(logout())
       }
     })
-  },[])
+  },[dispatch])
 
 
 

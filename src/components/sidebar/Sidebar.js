@@ -23,7 +23,7 @@ function Sidebar() {
         {/* profile */}
         <div className="sidebar__top">
           <img src="https://images.unsplash.com/photo-1635776062043-223faf322554?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt=""  />
-          <Avatar className='sidebar__avatar' src={user.photoURL} />
+          <Avatar className='sidebar__avatar' src={user.photoURL ? user.photoURL : user.displayName} />
           <h2>{user.displayName}</h2>
           <h4>{user.email}</h4>
         </div>
